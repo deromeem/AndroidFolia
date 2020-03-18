@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">AndroidFolia</string>
+
+    <!-- Strings related to Settings -->
+    <string name="title_activity_settings">Configuration</string>
+    <string name="action_settings">Configuration</string>
+    <string name="title_mes_preferences">Mes préférences</string>
+
+    <string name="pref_title_api">API utilisée</string>
+    <string-array name="pref_api_list_titles">
+        <item>Locale</item>
+        <item>Distante</item>
+    </string-array>
+    <string-array name="pref_api_list_values">
+        <item>"0"</item>
+        <item>"1"</item>
+    </string-array>
+    <string name="pref_title_api_url_loc">URL locale de l\'API</string>
+    <string name="pref_default_api_url_loc">192.168.1.11/folia/api</string>
+    <string name="pref_title_api_url_dist">URL distante de l\'API</string>
+    <string name="pref_default_api_url_dist">www.lla-sio.com/folia/api</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
