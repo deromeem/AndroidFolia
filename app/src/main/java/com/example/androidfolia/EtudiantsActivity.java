@@ -21,7 +21,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MesGroupesActivity extends ListActivity {
+public class EtudiantsActivity extends ListActivity {
 
     // paramètres de connexion à transmettre par intent à l'activité suivante :
     String userLogin = "";
@@ -33,11 +33,12 @@ public class MesGroupesActivity extends ListActivity {
     ArrayList<HashMap<String, String>> itemsList = new ArrayList<HashMap<String, String>>();
 
     // noms des noeuds JSON :
-    private static final String TAG_TASK = "mes_groupes";
+    private static final String TAG_TASK = "etudiants";
     private static final String TAG_ID = "id";
+    private static final String TAG_ETUDIANT = "etudiant";
+    private static final String TAG_EMAIL = "email";
+    private static final String TAG_CLASSE = "classe";
     private static final String TAG_DATE = "date";
-    private static final String TAG_NOM = "nom";
-    private static final String TAG_AUTEUR = "auteur";
 
     // tableau JSON de la liste des items :
     JSONArray items = null;
@@ -45,7 +46,7 @@ public class MesGroupesActivity extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mes_groupes);
+        setContentView(R.layout.activity_etudiants);
 
         // récupération de l'intent de la vue courante :
         Intent i = getIntent();
@@ -71,7 +72,7 @@ public class MesGroupesActivity extends ListActivity {
                 // Toast.makeText(MesMessagesActivity.this, "Messages aid : "+aid, Toast.LENGTH_LONG).show();
 
                 // création d'une nouvelle intention (intent)
-                Intent in = new Intent(getApplicationContext(), GroupeActivity.class);
+                Intent in = new Intent(getApplicationContext(), EtudiantActivity.class);
                 in.putExtra(TAG_USER_LOGIN, userLogin);
                 in.putExtra(TAG_USER_PWD, userPwd);
                 // envoi de l'aid à l'activité suivante (activity)
@@ -113,7 +114,7 @@ public class MesGroupesActivity extends ListActivity {
         @Override
         protected void onPreExecute() {
             // super.onPreExecute();
-            pDialog = new ProgressDialog(MesGroupesActivity.this);
+            pDialog = new ProgressDialog(EtudiantsActivity.this);
             pDialog.setMessage("Attente de connexion...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -159,7 +160,7 @@ public class MesGroupesActivity extends ListActivity {
             }
 
             if (json != null) {
-                //Toast.makeText(MesGroupesActivity.this, json.toString(), Toast.LENGTH_LONG).show();  // TEST/DEBUG
+                // Toast.makeText(EtudiantsActivity.this, json.toString(), Toast.LENGTH_LONG).show();  // TEST/DEBUG
                 try {
                     success = json.getInt(TAG_SUCCESS);
                     message = json.getString(TAG_MESSAGE);
@@ -179,18 +180,20 @@ public class MesGroupesActivity extends ListActivity {
 
                         // enregistrement de chaque élément JSON dans une variable
                         String id = obj.getString(TAG_ID);
+                        String etudiant = obj.getString(TAG_ETUDIANT);
+                        String email = obj.getString(TAG_EMAIL);
+                        String classe = obj.getString(TAG_CLASSE);
                         String date = obj.getString(TAG_DATE);
-                        String nom = obj.getString(TAG_NOM);
-                        String auteur = obj.getString(TAG_AUTEUR);
 
                         // création d'un nouveau HashMap
                         HashMap<String, String> map = new HashMap<>();
 
                         // ajout de chaque variable (clé, valeur) dans le HashMap
                         map.put(TAG_ID, id);
+                        map.put(TAG_ETUDIANT, etudiant);
+                        map.put(TAG_EMAIL, email);
+                        map.put(TAG_CLASSE, classe);
                         map.put(TAG_DATE, date);
-                        map.put(TAG_NOM, nom);
-                        map.put(TAG_AUTEUR, auteur);
 
                         // ajout du HashMap dans le tableau des items
                         itemsList.add(map);
@@ -209,9 +212,9 @@ public class MesGroupesActivity extends ListActivity {
                     // mise à jour de la ListView avec les données JSON mises dans le tableau itemsList
                     ListAdapter adapter;
                     adapter = new SimpleAdapter(
-                            MesGroupesActivity.this, itemsList,
-                            R.layout.list_groupe_item, new String[]{TAG_ID, TAG_DATE, TAG_NOM, TAG_AUTEUR},
-                            new int[]{R.id.aid, R.id.date, R.id.nom, R.id.auteur});
+                            EtudiantsActivity.this, itemsList,
+                            R.layout.list_etudiant_item, new String[]{TAG_ID, TAG_ETUDIANT, TAG_EMAIL, TAG_CLASSE, TAG_DATE},
+                            new int[]{R.id.aid, R.id.etudiant, R.id.email, R.id.classe, R.id.date});
                     setListAdapter(adapter);
                 }
             });

@@ -6,14 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainScreenActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Nom de l'utilisateur connecté -->
-        <TextView android:id="@+id/txtUserName"
+        <TextView
+            android:id="@+id/txtUserName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dip"
@@ -21,18 +27,28 @@
             android:textSize="17dip"/>
 
         <!--  Bouton pour afficher les groupes de l'utilisateur -->
-        <Button android:id="@+id/btnViewMesGroupes"
+        <Button
+            android:id="@+id/btnViewMesGroupes"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Mes groupes"
-            android:layout_marginTop="25dip"/>
+            android:layout_marginTop="25dip"
+            android:text="Mes groupes"/>
 
         <!--  Bouton pour afficher les portfolios -->
-        <Button android:id="@+id/btnViewPortfolios"
+        <Button
+            android:id="@+id/btnViewPortfolios"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Portfolios"
-            android:layout_marginTop="25dip"/>
+            android:layout_marginTop="25dip"
+            android:text="Portfolios"/>
+
+        <!--  Bouton pour afficher les portfolios -->
+        <Button
+            android:id="@+id/btnViewEtudiants"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:text="Etudiants"/>
 
     </LinearLayout>
 

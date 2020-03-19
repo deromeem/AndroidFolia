@@ -6,32 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Logo de l'appli et du site CP3D -->
         <ImageView
+            android:id="@+id/img_logo_folia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/img_logo_folia"
-            android:src="@drawable/logo_folia"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_folia" />
 
         <!-- Saisie de l'identifiant -->
         <EditText
             android:id="@+id/edtLogin"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:ems="10"
             android:hint="Identifiant"
-            android:text="mdupond"
             android:inputType="textEmailAddress"
             android:padding="10dp"
-            android:layout_marginBottom="10dp"
-            android:singleLine="true">
+            android:singleLine="true"
+            android:text="mdupond">
+
             <requestFocus />
         </EditText>
 
@@ -42,10 +48,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Mot de passe"
-            android:text="123456"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:text="123456" />
 
         <!-- Bouton de validation -->
         <Button

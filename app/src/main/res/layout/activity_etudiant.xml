@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupeActivity">
+    tools:context=".EtudiantActivity">
 
     <LinearLayout
         xmlns:tools="http://schemas.android.com/tools"
@@ -12,58 +12,20 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".GroupeActivity">
+        tools:context=".EtudiantActivity">
 
-        <!-- Etiquette date -->
+        <!-- Etiquette etudiant -->
         <TextView android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Date :"
+            android:text="Étudiant :"
             android:paddingLeft="10dip"
             android:paddingRight="10dip"
             android:paddingTop="10dip"
             android:textSize="17dip"
             android:textStyle="bold"/>
 
-        <!-- Valeur date -->
-        <TextView android:id="@+id/date"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dip"
-            android:layout_marginBottom="10dip"
-            android:textSize="17dip"
-            android:singleLine="true"/>
-
-        <!-- Etiquette groupe -->
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Groupe :"
-            android:paddingLeft="10dip"
-            android:paddingRight="10dip"
-            android:paddingTop="10dip"
-            android:textSize="17dip"
-            android:textStyle="bold"/>
-
-        <!-- Valeur groupe -->
-        <TextView android:id="@+id/nom"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dip"
-            android:layout_marginBottom="10dip"
-            android:textSize="17dip"
-            android:singleLine="true"/>
-
-        <!-- Etiquette auteur -->
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Auteur :"
-            android:paddingLeft="10dip"
-            android:paddingRight="10dip"
-            android:paddingTop="10dip"
-            android:textSize="17dip"
-            android:textStyle="bold"/>
-
-        <!-- Valeur auteur -->
-        <TextView android:id="@+id/auteur"
+        <!-- Valeur etudiant -->
+        <TextView android:id="@+id/etudiant"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dip"
@@ -88,8 +50,45 @@
             android:layout_margin="5dip"
             android:layout_marginBottom="10dip"
             android:textSize="17dip"
-            android:lines="10"
-            android:gravity="top"/>
+            android:singleLine="true"/>
+
+        <!-- Etiquette classe -->
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Classe :"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="10dip"
+            android:textSize="17dip"
+            android:textStyle="bold"/>
+
+        <!-- Valeur classe -->
+        <TextView android:id="@+id/classe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:layout_marginBottom="10dip"
+            android:textSize="17dip"
+            android:singleLine="true"/>
+
+        <!-- Etiquette date -->
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Date de création:"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="10dip"
+            android:textSize="17dip"
+            android:textStyle="bold"/>
+
+        <!-- Valeur date -->
+        <TextView android:id="@+id/date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:layout_marginBottom="10dip"
+            android:textSize="17dip"
+            android:singleLine="true"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

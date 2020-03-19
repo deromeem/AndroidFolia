@@ -1,8 +1,8 @@
 package com.example.androidfolia;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.app.AlertDialog;
@@ -10,7 +10,6 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -106,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     class GoLogin extends AsyncTask<String, String, JSONObject> {
 
         // url de login
@@ -176,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (json != null) {
-                Toast.makeText(MainActivity.this, json.toString(), Toast.LENGTH_LONG).show();
+                // Toast.makeText(MainActivity.this, json.toString(), Toast.LENGTH_LONG).show();
                 try {
                     success = json.getInt(TAG_SUCCESS);
                     message = json.getString(TAG_MESSAGE);

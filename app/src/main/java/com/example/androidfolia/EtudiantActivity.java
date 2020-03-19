@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class GroupeActivity extends AppCompatActivity {
+public class EtudiantActivity extends AppCompatActivity {
 
     // paramêtres de connexion à transmettre par intent à l'activité suivante
     String userLogin = "";
@@ -23,33 +23,33 @@ public class GroupeActivity extends AppCompatActivity {
     private static final String TAG_USER_PWD = "pwd";
 
     // contrôles de la vue (layout) correspondante
-    TextView txtDate;
-    TextView txtNom;
-    TextView txtAuteur;
+    TextView txtEtudiant;
     TextView txtEmail;
+    TextView txtClasse;
+    TextView txtDate;
 
     // tableau JSON des détails de l'élément
     JSONArray item = null;
 
     // noms des noeuds JSON
-    private static final String TAG_TASK = "groupes";
+    private static final String TAG_TASK = "etudiants";
     private static final String TAG_ID = "id";
-    private static final String TAG_DATE = "date";
-    private static final String TAG_NOM = "nom";
-    private static final String TAG_AUTEUR = "auteur";
+    private static final String TAG_ETUDIANT = "etudiant";
     private static final String TAG_EMAIL = "email";
+    private static final String TAG_CLASSE = "classe";
+    private static final String TAG_DATE = "date";
 
     // variables associées aux noeuds JSON
     String aid = "1";
-    String date = "";
-    String nom = "";
-    String auteur = "";
+    String etudiant = "";
     String email = "";
+    String classe = "";
+    String date = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_groupe);
+        setContentView(R.layout.activity_etudiant);
 
         // récupération de l'intent de la vue de détail :
         Intent in = getIntent();
@@ -94,7 +94,7 @@ public class GroupeActivity extends AppCompatActivity {
             // DEBUG : affichage temporaire de aid
             // Toast.makeText(MessageActivity.this, "onPreExecute aid : "+aid, Toast.LENGTH_LONG).show();
 
-            pDialog2 = new ProgressDialog(GroupeActivity.this);
+            pDialog2 = new ProgressDialog(EtudiantActivity.this);
             pDialog2.setMessage("Chargement des détails de l'élément. Veuillez attendre...");
             pDialog2.setIndeterminate(false);
             pDialog2.setCancelable(true);
@@ -162,10 +162,10 @@ public class GroupeActivity extends AppCompatActivity {
                     JSONObject obj = item.getJSONObject(0);
 
                     // enregistrement de chaque élément JSON dans une variable
-                    date = obj.getString(TAG_DATE);
-                    nom = obj.getString(TAG_NOM);
-                    auteur = obj.getString(TAG_AUTEUR);
+                    etudiant = obj.getString(TAG_ETUDIANT);
                     email = obj.getString(TAG_EMAIL);
+                    classe = obj.getString(TAG_CLASSE);
+                    date = obj.getString(TAG_DATE);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -179,16 +179,16 @@ public class GroupeActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
                     // mise à jour des TextView avec les données JSON :
-                    txtDate = (TextView) findViewById(R.id.date);
-                    txtNom = (TextView) findViewById(R.id.nom);
-                    txtAuteur = (TextView) findViewById(R.id.auteur);
+                    txtEtudiant = (TextView) findViewById(R.id.etudiant);
                     txtEmail = (TextView) findViewById(R.id.email);
+                    txtClasse = (TextView) findViewById(R.id.classe);
+                    txtDate = (TextView) findViewById(R.id.date);
 
                     // affiche les données de l'élément dans les TextView :
-                    txtDate.setText(date);
-                    txtNom.setText(nom);
-                    txtAuteur.setText(auteur);
+                    txtEtudiant.setText(etudiant);
                     txtEmail.setText(email);
+                    txtClasse.setText(classe);
+                    txtDate.setText(date);
                 }
             });
         }
