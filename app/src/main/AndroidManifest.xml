@@ -14,23 +14,23 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MyPreferenceActivity"
-            android:label="@string/title_mes_preferences"/>
+            android:label="@string/title_mes_preferences" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"/>
-        <activity android:name=".MainScreenActivity"/>
-        <activity android:name=".GroupeActivity"/>
-        <activity android:name=".MesGroupesActivity"/>
-        <activity android:name=".PortfoliosActivity"/>
-        <activity android:name=".EtudiantActivity"/>
-        <activity android:name=".EtudiantsActivity"/>
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".MainScreenActivity" />
+        <activity android:name=".GroupeActivity" />
+        <activity android:name=".MesGroupesActivity" />
+        <activity android:name=".PortfoliosActivity" />
+        <activity android:name=".EtudiantActivity" />
+        <activity android:name=".EtudiantsActivity" />
     </application>
 
 </manifest>
