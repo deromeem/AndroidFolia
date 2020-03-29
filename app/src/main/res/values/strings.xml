@@ -16,7 +16,7 @@
         <item>"1"</item>
     </string-array>
     <string name="pref_title_api_url_loc">URL locale de l\'API</string>
-    <string name="pref_default_api_url_loc">192.168.1.28/Folia/api</string>
+    <string name="pref_default_api_url_loc">192.168.1.x/Folia/api</string>
     <string name="pref_title_api_url_dist">URL distante de l\'API</string>
     <string name="pref_default_api_url_dist">www.lla-sio.com/Folia/api</string>
 

@@ -1,5 +1,8 @@
 package com.example.androidfolia;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -122,7 +125,12 @@ public class EtudiantsActivity extends ListActivity {
 
             apiUrl = "http://" + getString(R.string.pref_default_api_url_loc) + "/index.php";
             // apiUrl = "http://" + getString(R.string.pref_default_api_url_dist) + "/index.php";
-
+            SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+            apiUrl = "http://" + SP.getString("PREF_API_URL_LOC", getString(R.string.pref_default_api_url_loc)) + "/index.php";
+            String prefAPI = SP.getString("PREF_API", "0");
+            if (prefAPI.equals("1")) {
+                apiUrl = "http://" + SP.getString("PREF_API_URL_DIST", getString(R.string.pref_default_api_url_dist)) + "/index.php";
+            }
             // Toast.makeText(MesMessagesActivity.this, "URL de l'API : " + apiUrl, Toast.LENGTH_LONG).show();
         }
 

@@ -136,8 +136,6 @@ public class MainActivity extends AppCompatActivity {
             if (prefAPI.equals("1")) {
                 apiUrl = "http://" + SP.getString("PREF_API_URL_DIST", getString(R.string.pref_default_api_url_dist)) + "/index.php";
             }
-
-
             Toast.makeText(MainActivity.this,"URL de l'API : " + apiUrl,Toast.LENGTH_LONG).show();
         }
 
