@@ -38,7 +38,7 @@ public class PortfoliosActivity extends ListActivity {
     // noms des noeuds JSON :
     private static final String TAG_TASK = "portfolios";
     private static final String TAG_ID = "id";
-    private static final String TAG_LIBELLE = "libelle";
+    private static final String TAG_TITRE = "titre";
     private static final String TAG_THEME = "theme";
     private static final String TAG_ETUDIANT = "etudiant";
     private static final String TAG_CLASSE = "classe";
@@ -171,7 +171,7 @@ public class PortfoliosActivity extends ListActivity {
             }
 
             if (json != null) {
-                //Toast.makeText(MesGroupesActivity.this, json.toString(), Toast.LENGTH_LONG).show();  // TEST/DEBUG
+                // Toast.makeText(PortfoliosActivity.this, json.toString(), Toast.LENGTH_LONG).show();  // TEST/DEBUG
                 try {
                     success = json.getInt(TAG_SUCCESS);
                     message = json.getString(TAG_MESSAGE);
@@ -191,7 +191,7 @@ public class PortfoliosActivity extends ListActivity {
 
                         // enregistrement de chaque élément JSON dans une variable
                         String id = obj.getString(TAG_ID);
-                        String libelle = obj.getString(TAG_LIBELLE);
+                        String titre = obj.getString(TAG_TITRE);
                         String theme = "Thème : " + obj.getString(TAG_THEME);
                         String etudiant = obj.getString(TAG_ETUDIANT);
                         String classe = obj.getString(TAG_CLASSE);
@@ -204,7 +204,7 @@ public class PortfoliosActivity extends ListActivity {
 
                         // ajout de chaque variable (clé, valeur) dans le HashMap
                         map.put(TAG_ID, id);
-                        map.put(TAG_LIBELLE, libelle);
+                        map.put(TAG_TITRE, titre);
                         map.put(TAG_THEME, theme);
                         map.put(TAG_ETUDIANT, etudiant);
                         map.put(TAG_CLASSE, classe);
@@ -230,8 +230,8 @@ public class PortfoliosActivity extends ListActivity {
                     ListAdapter adapter;
                     adapter = new SimpleAdapter(
                             PortfoliosActivity.this, itemsList,
-                            R.layout.list_portfolio_item, new String[]{TAG_ID, TAG_LIBELLE, TAG_THEME, TAG_ETUDIANT, TAG_CLASSE, TAG_CREATED, TAG_HITS, TAG_NBCOM},
-                            new int[]{R.id.aid, R.id.libelle, R.id.theme, R.id.etudiant, R.id.classe, R.id.created, R.id.hits, R.id.nbcom});
+                            R.layout.list_portfolio_item, new String[]{TAG_ID, TAG_TITRE, TAG_THEME, TAG_ETUDIANT, TAG_CLASSE, TAG_CREATED, TAG_HITS, TAG_NBCOM},
+                            new int[]{R.id.aid, R.id.titre, R.id.theme, R.id.etudiant, R.id.classe, R.id.created, R.id.hits, R.id.nbcom});
                     setListAdapter(adapter);
                 }
             });
