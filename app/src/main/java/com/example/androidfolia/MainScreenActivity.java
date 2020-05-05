@@ -20,6 +20,7 @@ public class MainScreenActivity extends AppCompatActivity {
     Button btnViewMesGroupes;
     Button btnViewPortfolios;
     Button btnViewEtudiants;
+    Button btnViewMesCommentaires;
 
     String userName = "";
     private static final String TAG_USER_NAME = "name";
@@ -42,6 +43,8 @@ public class MainScreenActivity extends AppCompatActivity {
         btnViewMesGroupes = (Button) findViewById(R.id.btnViewMesGroupes);
         btnViewPortfolios = (Button) findViewById(R.id.btnViewPortfolios);
         btnViewEtudiants = (Button) findViewById(R.id.btnViewEtudiants);
+        btnViewMesCommentaires = (Button) findViewById(R.id.btnViewMesCommentaires);
+
 
         // événement de clic sur le bouton de visualisation de Mes groupes
         btnViewMesGroupes.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +73,17 @@ public class MainScreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(getApplicationContext(), EtudiantsActivity.class);
+                in.putExtra(TAG_USER_LOGIN, userLogin);
+                in.putExtra(TAG_USER_PWD, userPwd);
+                startActivity(in);
+            }
+        });
+
+        // événement de clic sur le bouton de visualisation des etudiants
+        btnViewMesCommentaires.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getApplicationContext(), MesCommentairesActivity.class);
                 in.putExtra(TAG_USER_LOGIN, userLogin);
                 in.putExtra(TAG_USER_PWD, userPwd);
                 startActivity(in);

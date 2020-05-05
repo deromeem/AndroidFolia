@@ -50,6 +50,14 @@
             android:layout_marginTop="25dip"
             android:text="Etudiants"/>
 
+        <!--  Bouton pour afficher les commentaires -->
+        <Button
+            android:id="@+id/btnViewMesCommentaires"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:text="Mes Commentaires"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
