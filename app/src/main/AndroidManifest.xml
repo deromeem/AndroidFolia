@@ -31,6 +31,8 @@
         <activity android:name=".PortfoliosActivity" />
         <activity android:name=".EtudiantActivity" />
         <activity android:name=".EtudiantsActivity" />
+        <activity android:name=".CommentaireActivity" />
+        <activity android:name=".MesCommentairesActivity" />
     </application>
 
 </manifest>

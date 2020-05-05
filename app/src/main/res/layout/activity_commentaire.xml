@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentaireActivity">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".EtudiantActivity">
+
+        <!-- Etiquette auteur du portfolio -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:paddingTop="10dip"
+            android:paddingRight="10dip"
+            android:text="Auteur :"
+            android:textSize="17dip"
+            android:textStyle="bold" />
+
+        <!-- Valeur auteur  -->
+        <TextView
+            android:id="@+id/auteur"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:layout_marginBottom="10dip"
+            android:singleLine="true"
+            android:textSize="17dip" />
+
+        <!-- Etiquette titre portfolio -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:paddingTop="10dip"
+            android:paddingRight="10dip"
+            android:text="Titre :"
+            android:textSize="17dip"
+            android:textStyle="bold" />
+
+        <!-- Valeur titre -->
+        <TextView
+            android:id="@+id/titre"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:layout_marginBottom="10dip"
+            android:singleLine="true"
+            android:textSize="17dip" />
+
+        <!-- Etiquette texte -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:paddingTop="10dip"
+            android:paddingRight="10dip"
+            android:text="Commentaire :"
+            android:textSize="17dip"
+            android:textStyle="bold" />
+
+        <!-- Valeur texte -->
+        <TextView
+            android:id="@+id/texte"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:layout_marginBottom="10dip"
+            android:textSize="17dip"
+            android:lines="10"
+            android:gravity="top" />
+
+        <!-- Etiquette date -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:paddingTop="10dip"
+            android:paddingRight="10dip"
+            android:text="Date de création:"
+            android:textSize="17dip"
+            android:textStyle="bold" />
+
+        <!-- Valeur date -->
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:layout_marginBottom="10dip"
+            android:singleLine="true"
+            android:textSize="17dip" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
